@@ -1,0 +1,202 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  overflow: hidden;
+}
+
+/* APP LAYOUT */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.side-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  padding: 12px 14px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.side-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  position: relative;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* BLURRED BACKGROUND */
+.bg-blur {
+  position: absolute;
+  inset: 0;
+  left: 220px; /* prevents blur behind sidebar */
+  background-size: cover;
+  background-position: center;
+  filter: blur(60px);
+  opacity: 0.35;
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+/* KEEP CONTENT ABOVE BLUR */
+.main-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* TOP BAR */
+.top-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px 18px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.search-box input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #ccc;
+}
+
+/* PROFILE (TOP RIGHT) */
+.profile-top {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.profile-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #1db954;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* MUSIC PLAYER CARD */
+.player {
+  width: 320px;
+  background: #111;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
+}
+
+/* COVER */
+.cover {
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #333;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TITLE */
+.title h3 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.title p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* PROGRESS */
+#progress {
+  width: 100%;
+  margin: 16px 0;
+}
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.controls button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #1db954;
+  color: #000;
+}
