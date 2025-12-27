@@ -200,3 +200,91 @@ body {
   background: #1db954;
   color: #000;
 }
+.side-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.side-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(29,185,84,0.2), transparent);
+  transform: translateX(-100%);
+  transition: 0.4s;
+}
+
+.side-btn:hover::before {
+  transform: translateX(100%);
+}
+
+.side-btn:hover {
+  color: #1db954;
+  transform: translateX(6px);
+}
+.player {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.player:hover {
+  transform: scale(1.08);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+.cover {
+  overflow: hidden;
+}
+
+.cover img {
+  transition: transform 0.6s ease;
+}
+
+.cover:hover img {
+  transform: scale(1.15);
+}
+.controls button {
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s;
+}
+
+.controls button:hover {
+  background: #1db954;
+  box-shadow: 0 0 18px rgba(29,185,84,0.8);
+}
+
+.controls button:active {
+  transform: scale(0.9);
+}
+.search-box {
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.search-box:hover,
+.search-box:focus-within {
+  box-shadow: 0 0 20px rgba(29,185,84,0.4);
+  transform: scale(1.02);
+}
+.profile-circle {
+  transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.profile-circle:hover {
+  transform: scale(1.15) rotate(6deg);
+  box-shadow: 0 0 25px rgba(29,185,84,0.8);
+}
+#progress {
+  accent-color: #1db954;
+  cursor: pointer;
+}
+.main-content {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
